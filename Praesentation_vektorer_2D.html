@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8"/>
+<title>Vektorer i 2D - resten</title>
+<meta name="author" content="Vibenshus Gymnasium"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/sky.css" id="theme"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="">
+<h2>Vektorer i 2D - resten</h2><h3>Matematik</h3><h4>Vibenshus Gymnasium</h4><h4></h4>
+</section>
+
+
+<section>
+<section id="slide-org6564580" data-background="">
+<h2 id="org6564580">Skalarprodukt</h2>
+<div class="outline-text-2" id="text-org6564580">
+</div>
+</section>
+<section id="slide-orge7be0ad" data-background="">
+<h3 id="orge7be0ad">Skalarprodukt</h3>
+<p>
+Vi kender allerede 
+</p>
+
+<blockquote>
+<p>
+\[\vec{a}\cdot \vec{b} = a_x\cdot b_x+a_y\cdot b_y\]
+</p>
+</blockquote>
+
+<p class="fragment (appear)">
+Nu skal vi se på
+</p>
+
+<blockquote class="fragment (appear)">
+<p>
+\[\vec{a}\cdot \vec{b} = \lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert \cdot \cos \left( v \right)\]
+</p>
+</blockquote>
+
+</section>
+<section data-background="">
+
+
+<p>
+Udledning
+</p>
+
+<div id="org9eb50a4" class="figure">
+<p><a href="./skalarprodukt_med_vinkel.pdf" width="600px"><img src="./img/2020-04-25_11-39-43_screenshot.png" alt="2020-04-25_11-39-43_screenshot.png" width="600px" /></a>
+</p>
+</div>
+
+</section>
+<section id="slide-org486848d" data-background="">
+<h3 id="org486848d">Vinkel mellem to vektorer</h3>
+<div style="font-size: 60%;">
+<p>
+Kombinér de to udtryk for skalarproduktet og isoler vinklen.
+</p>
+
+<div>
+\begin{align*}
+\vec{a} \cdot \vec{b} &= a_x\cdot b_x+a_y\cdot b_y  \\
+\vec{a} \cdot \vec{b} &= \lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert \cdot \cos \left( v \right) \\
+\lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert \cdot \cos \left( v \right) &=a_x\cdot b_x+a_y\cdot b_y \\
+\end{align*}
+
+</div>
+
+<blockquote>
+<p>
+\[v = \cos^{-1} \left( \frac{a_x\cdot b_x+a_y\cdot b_y}{\lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert} \right)\]
+</p>
+</blockquote>
+</section>
+<section data-background="">
+<blockquote>
+<p>
+Hvis skalarproduktet mellem to vektorer er nul, er de to vektorer vinkelrette på hinanden.
+\[\text{Hvis} \quad \vec{a} \cdot \vec{b} = 0 \quad \text{så er}\quad \vec{a} \perp \vec{b}\]
+</p>
+</blockquote>
+</section>
+<section id="slide-org089646c" data-background="">
+<h4 id="org089646c">Opgave</h4>
+
+<div id="org55f9813" class="figure">
+<p><img src="./img/2020-04-25_12-36-48_screenshot.png" alt="2020-04-25_12-36-48_screenshot.png" width="600px" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org534ea93" data-background="">
+<h2 id="org534ea93">Determinant</h2>
+<div class="outline-text-2" id="text-org534ea93">
+</div>
+</section>
+<section id="slide-orga3c4cb4" data-background="">
+<h3 id="orga3c4cb4">Determinant</h3>
+<div style="font-size: 60%;">
+<p>
+Determinanten mellem to vektorer udregnes således:
+</p>
+
+<blockquote>
+<p>
+\[\det \left( \vec{a}, \vec{b} \right) = \begin{vmatrix} a_x & b_x \\ a_y & b_y \end{vmatrix} = a_x \cdot b_y - b_x \cdot a_y\]
+</p>
+</blockquote>
+
+<p class="fragment (appear)">
+Hvad kan determinanten så bruges til?
+</p>
+
+<blockquote class="fragment (appear)">
+<p>
+Hvis determinanten mellem to vektorer er nul, er de to vektorer parallelle.
+\[\text{Hvis} \quad \det \left(\vec{a},\vec{b}\right) = 0 \quad \text{så er} \quad \vec{a} \parallel \vec{b}\]
+</p>
+</blockquote>
+
+</section>
+<section data-background="">
+<p>
+Udledning
+</p>
+
+<div style="font-size: 60%;">
+<ul>
+<li>Det vides at en vektor og dennes tværvektor er vinkelrette på hinanden</li>
+
+</ul>
+
+<p>
+\[\vec{a} \cdot \hat{a} = 0\]
+</p>
+
+<ul>
+<li>Dvs. at hvis \(\vec{a} \cdot \hat{b} = 0\) så er \(\vec{a} \parallel \vec{b}\)</li>
+
+</ul>
+
+
+
+<div id="org99868a6" class="figure">
+<p><a href="./udledning_determinant.pdf" width="600px"><img src="./img/2020-04-25_13-22-52_screenshot.png" alt="2020-04-25_13-22-52_screenshot.png" width="600px" /></a>
+</p>
+</div>
+
+
+</section>
+<section id="slide-orga1bd24f" data-background="">
+<h4 id="orga1bd24f">Opgaver</h4>
+<div style="font-size: 60%;">
+<ol>
+<li>Hvad er determinanten af \(\vec{a} = \begin{pmatrix} 8 \\ 12 \end{pmatrix}\) og \(\vec{b} = \begin{pmatrix} -5 \\ 6 \end{pmatrix}\)?</li>
+
+<li>Hvad skal \(t\) være, for at vektorerne \(\vec{c} =\begin{pmatrix} 2 \\-3 \end{pmatrix}\) og \(\vec{d} = \begin{pmatrix} 5-t\\ 6\end{pmatrix}\) er parallelle?</li>
+
+</ol>
+
+</section>
+<section id="slide-org7632951" data-background="">
+<h3 id="org7632951">Hvad kan determinanten ellers bruges til?</h3>
+<div style="font-size: 60%;">
+<p class="fragment (appear)">
+Bestemmelse af arealer af parallelogrammer og trekanter.
+</p>
+
+<div id="orgeeaadf7" class="figure">
+<p><img src="./img/2020-04-25_14-28-46_csm_fig-17-kap-5--mat-B1-revision_d988b08468.png" alt="2020-04-25_14-28-46_csm_fig-17-kap-5--mat-B1-revision_d988b08468.png" width="300px" class="fragment (appear)" />
+</p>
+</div>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+
+<div id="org69f27c1" class="figure">
+<p><img src="./img/2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png" alt="2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png" width="200px" />
+</p>
+</div>
+
+<div class="fragment (appear)">
+\begin{align*}
+A_\text{firkant} &= x_1\cdot y_2 \\
+A_1 &= \frac{1}{2}x_1 \cdot y_1 \\
+A_2 &= \frac{1}{2}x_2 \cdot y_2 \\
+A_3 &= \frac{1}{2}\left(x_1 - x_2\right) \cdot \left(y_2-y_1\right) 
+\end{align*}
+
+</div>
+
+</section>
+<section data-background="">
+<div style="font-size: 50%;">
+
+<div id="org66a2e3f" class="figure">
+<p><img src="./img/2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png" alt="2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png" width="200px" />
+</p>
+</div>
+
+<p class="fragment (appear)">
+Trekantens areal
+</p>
+<div class="fragment (appear)">
+\begin{align*}
+A &= A_\text{firkant} - A_1 - A_2 - A_3 \\
+A &= x_1\cdot y_2 - \left( \frac{1}{2}x_1 \cdot y_1 \right)  - \left( \frac{1}{2}x_2 \cdot y_2 \right) - \left( \frac{1}{2}\left(x_1 - x_2\right) \cdot \left(y_2-y_1\right) \right) \\
+A &= x_1\cdot y_2 -  \frac{1}{2}x_1 \cdot y_1   -  \frac{1}{2}x_2 \cdot y_2  -  \frac{1}{2} x_1 y_2 +\frac{1}{2}x_1 y_1 + \frac{1}{2}x_2 y_2 - \frac{1}{2}x_2 y_1 \\
+A &= x_1\cdot y_2 -  \frac{1}{2} x_1 y_2 - \frac{1}{2}x_2 y_1 \\
+A &= \frac{1}{2}\left(x_1\cdot y_2 - x_2 y_1\right) = \frac{1}{2}\det \left( \vec{b}, \vec{a} \right)
+\end{align*}
+
+</div>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+En trekants areal
+</p>
+
+<div id="org95fc865" class="figure">
+<p><img src="./img/2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png" alt="2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png" width="300px" />
+</p>
+</div>
+<div>
+\begin{align*}
+A_\text{trekant} &= \frac{1}{2}\lvert x_1\cdot y_2 - x_2 y_1 \rvert \\
+A_\text{trekant} &= \frac{1}{2}\left| \det \left( \vec{a}, \vec{b} \right)\right|
+\end{align*}
+
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+Et parallelograms areal
+</p>
+
+
+<div id="org750f5c3" class="figure">
+<p><img src="./img/2020-04-25_14-28-46_csm_fig-17-kap-5--mat-B1-revision_d988b08468.png" alt="2020-04-25_14-28-46_csm_fig-17-kap-5--mat-B1-revision_d988b08468.png" width="300px" />
+</p>
+</div>
+
+<div>
+\begin{align*}
+A_\text{parallelogram} &= \lvert x_1\cdot y_2 - x_2 y_1 \rvert \\
+A_\text{parallelogram} &= \left| \det \left( \vec{a}, \vec{b} \right)\right|
+\end{align*}
+
+</div>
+
+<blockquote>
+<p>
+Læg mærke til de numeriske værdier.
+</p>
+</blockquote>
+</div>
+
+</section>
+<section id="slide-orgec94dd5" data-background="">
+<h4 id="orgec94dd5">Opgaver</h4>
+<div style="font-size: 60%;">
+<p>
+Bestem arealerne til de tre trekanter, hvis hjørner er givet ved følgende:
+</p>
+
+<ol>
+<li>(0,0), (4,6) og (7,5)</li>
+<li>(-2,-3), (-5,6) og (-1,-7)</li>
+<li>(3,-1), (2,3) og (-2,1)</li>
+
+</ol>
+
+<blockquote class="fragment (appear)">
+<p>
+Hints: Opstil to vektorer, som har begyndelsespunkt i det samme punkt. Benyt herefter determinantmetoden til at bestemme trekantens areal.
+</p>
+</blockquote>
+
+</section>
+</section>
+<section>
+<section id="slide-org1d7366e" data-background="">
+<h2 id="org1d7366e">Projektion</h2>
+<div class="outline-text-2" id="text-org1d7366e">
+</div>
+</section>
+<section id="slide-org8f13b1f" data-background="">
+<h3 id="org8f13b1f">Projektion</h3>
+<div style="font-size: 60%;">
+<blockquote>
+<p>
+Lys med en lygte på både \(\vec{a}\) og \(\vec{b}\) så lyset falder vinkelret ind på \(\vec{b}\). <i>Projektionen</i> af \(\vec{a}\) på \(\vec{b}\) er da <i>skyggen</i> af \(\vec{a}\) på \(\vec{b}\).
+</p>
+</blockquote>
+
+
+<div id="orgb49811b" class="figure">
+<p><img src="./img/2020-04-25_20-09-21_projektionsol_new.png" alt="2020-04-25_20-09-21_projektionsol_new.png" width="400px" />
+</p>
+</div>
+
+
+</section>
+<section data-background="">
+<div style="font-size: 50%;">
+
+
+<div id="org94ef3dd" class="figure">
+<p><img src="./img/2020-04-25_20-07-57_projektionbevis_new.png" alt="2020-04-25_20-07-57_projektionbevis_new.png" width="300px" />
+</p>
+</div>
+
+<p>
+Koordinaterne til projektionsvektoren
+</p>
+<blockquote>
+<div>
+\begin{align*}
+\vec{a}_b &= \frac{\vec{a} \cdot \vec{b}}{\lvert \vec{b}\rvert} \cdot \vec{e}_b \\
+\vec{a}_b &= \frac{\vec{a} \cdot \vec{b}}{\lvert \vec{b}\rvert^2} \cdot \vec{b} \\
+\vec{a}_b &= \frac{\vec{a} \cdot \vec{b}}{\vec{b} \cdot \vec{b}} \cdot \vec{b}
+\end{align*}
+
+</div>
+</blockquote>
+
+</section>
+<section id="slide-org08c3767" data-background="">
+<h3 id="org08c3767">Bevis</h3>
+<div style="font-size: 60%;">
+<ul>
+<li>I makkerpar skal I læse beviset på <a href="https://matbhtx.systime.dk/?id=c15278">https://matbhtx.systime.dk/?id=c15278</a>. Skift til at læse højt for hinanden.</li>
+<li>Fortsæt først når alle har forstået sætningen.</li>
+<li>Hvordan kan det f.eks. være at \(\vec{b} \cdot \vec{b} = \lvert \vec{b} \rvert^2\)?</li>
+
+</ul>
+
+
+<div id="org8350ba4" class="figure">
+<p><img src="./img/2020-04-25_20-24-40_screenshot.png" alt="2020-04-25_20-24-40_screenshot.png" width="300px" />
+</p>
+</div>
+
+</section>
+<section id="slide-org15f2280" data-background="">
+<h3 id="org15f2280">Længden af projektionsvektoren</h3>
+<blockquote>
+<p>
+Er den numeriske værdi af det, der står foran enhedsvektoren.
+</p>
+</blockquote>
+
+<div>
+\begin{align*}
+\lvert \vec{a}_b \rvert = \frac{\lvert \vec{a} \cdot \vec{b} \rvert}{\lvert \vec{b} \rvert}
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-org89e38b4" data-background="">
+<h3 id="org89e38b4">Eksempel</h3>
+
+<div id="org1d8b55c" class="figure">
+<p><img src="./img/2020-04-25_20-45-07_screenshot.png" alt="2020-04-25_20-45-07_screenshot.png" width="600px" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-org8c7cd37" data-background="">
+<h3 id="org8c7cd37">Opgave</h3>
+<div style="font-size: 60%;">
+<p>
+For vektorerne \(\vec{a}=\begin{pmatrix} 5 \\ 2 \end{pmatrix}\) og \(\vec{b} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}\) (De samme vektorer som i eksemplet) skal I
+</p>
+
+<ol>
+<li>Bestemme koordinaterne til \(\vec{b}_a\).</li>
+<li>Bestemme længden af projektionsvektoren \(\lvert \vec{b}_a \rvert\).</li>
+
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-orge142aa0" data-background="">
+<h2 id="orge142aa0">Ligevægt / Statiske konstruktioner</h2>
+<div class="outline-text-2" id="text-orge142aa0">
+</div>
+</section>
+<section id="slide-org2dd21a1" data-background="">
+<h3 id="org2dd21a1">Ligevægt</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Hvis summen af alle vektorer danner en lukket polygon, er der tale om ligevægt.
+\[\vec{a} + \vec{b} + \vec{c} +\vec{d} = \begin{pmatrix} 0\\0\end{pmatrix}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="orgf382377" class="figure">
+<p><img src="./img/2020-04-26_13-21-39_screenshot.png" alt="2020-04-26_13-21-39_screenshot.png" width="300px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-org1deda91" data-background="">
+<h3 id="org1deda91">Statiske konstruktioner</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Summen af alle (kraft)vektorer i et knudepunkt er lig nul.
+\[\vec{F} + \vec{s}_1 + \vec{s}_2 + \vec{s}_3 = \vec{0}\]
+</p>
+
+
+<div id="orgbb0a847" class="figure">
+<p><img src="./img/2020-04-26_13-26-23_csm_Eiffeltaarnet_i_Paris_3eeb3e50ef.jpg" alt="2020-04-26_13-26-23_csm_Eiffeltaarnet_i_Paris_3eeb3e50ef.jpg" width="150px" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+
+<div id="org82612f2" class="figure">
+<p><img src="./img/2020-04-26_13-26-33_csm_figur-19_bb871a66f9.png" alt="2020-04-26_13-26-33_csm_figur-19_bb871a66f9.png" width="210px" />
+</p>
+</div>
+
+
+
+<div id="org56b9898" class="figure">
+<p><img src="./img/2020-04-26_13-26-54_csm_fig22_s345_bbb63fb24c.png" alt="2020-04-26_13-26-54_csm_fig22_s345_bbb63fb24c.png" width="210px" />
+</p>
+</div>
+
+</div>
+
+</section>
+<section id="slide-org12c3f00" data-background="">
+<h3 id="org12c3f00">Opgaver</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<blockquote>
+<p>
+Givet er vektorerne 
+\[\vec{a} = \begin{pmatrix} 4 \\ 3\end{pmatrix}\]
+og
+\[\vec{b} = \begin{pmatrix} 6 \\ 1\end{pmatrix}\]
+</p>
+
+<ol>
+<li>Bestem koordinaterne til en vektor \(\vec{c}\), der kan holde ligevægt med summen af \(\vec{a}\) og \(\vec{b}\).</li>
+
+</ol>
+</blockquote>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<p width="600px">
+<img src="./img/2020-04-26_13-12-00_screenshot.png" alt="2020-04-26_13-12-00_screenshot.png" width="600px" />
+(Det er højden af gitterkonstruktionen, som er 3.00 meter.)
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbaa9b35" data-background="">
+<h2 id="orgbaa9b35">Normalvektor til ret linje</h2>
+<div class="outline-text-2" id="text-orgbaa9b35">
+</div>
+</section>
+<section id="slide-org2ee257f" data-background="">
+<h3 id="org2ee257f">Normalvektor til ret linje</h3>
+<div style="font-size: 60%;">
+<p>
+Hvis en ret linje skrives som
+\[a \cdot x + b \cdot y +c =0\]
+så kan den skrives som
+\[y = - \frac{a}{b}\cdot x - \frac{c}{b}\]
+</p>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+For linjen
+\[a \cdot x + b \cdot y +c =0\]
+Er <i>retningsvektoren</i>   
+\[\vec{v} = \begin{pmatrix} b \\ - a \end{pmatrix}\]
+</p>
+
+<p>
+og normalvektoren er da
+\[\vec{n}= \hat{v} = \begin{pmatrix} a \\ b \end{pmatrix}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org7ca17e0" class="figure">
+<p><img src="./img/2020-04-26_11-44-35_screenshot.png" alt="2020-04-26_11-44-35_screenshot.png" width="300px" />
+</p>
+</div>
+</div>
+
+</section>
+<section data-background="">
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+For linjen
+\[y = a \cdot x + b\]
+Er <i>retningsvektoren</i>   
+\[\vec{v} = \begin{pmatrix} 1 \\ a \end{pmatrix}\]
+</p>
+
+<p>
+og normalvektoren er da
+\[\vec{n}= \hat{v} = \begin{pmatrix} - a \\ 1 \end{pmatrix}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org9158e95" class="figure">
+<p><img src="./img/2020-04-26_12-25-20_screenshot.png" alt="2020-04-26_12-25-20_screenshot.png" width="300px" />
+</p>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc101d9e" data-background="">
+<h2 id="orgc101d9e">Afstand fra linje til punkt</h2>
+<div class="outline-text-2" id="text-orgc101d9e">
+</div>
+</section>
+<section id="slide-org640213c" data-background="">
+<h3 id="org640213c">Afstand fra linje til punkt</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+Hvis en ret linje er beskrevet med ligningen
+\[l: ax+by+c = 0\]
+og et punkt er beskrevet som
+\[P(d,e)\]
+da kan den <i>vinkelrette</i> afstand mellem linjen og punktet bestemmes vha.
+</p>
+
+<p>
+\[\boxed{dist(l,P)= z = \frac{\lvert a \cdot d + b \cdot e + c\rvert}{\sqrt{a^2+b^2}}}\]
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="org68e0667" class="figure">
+<p><img src="./img/2020-04-26_13-01-51_screenshot.png" alt="2020-04-26_13-01-51_screenshot.png" width="300px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-orga0bbb5e" data-background="">
+<h3 id="orga0bbb5e">Opgaver</h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+En ret linje er givet ved: 
+\[12x+3y+9 =0\]
+</p>
+
+<ol>
+<li>Bestem linjens normalvektor.</li>
+<li>Bestem afstanden fra linjen til punktet \((-2,4)\).</li>
+<li>Bestem afstanden fra linjen til punktet \((0,0)\).</li>
+
+</ol>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+To parallelle linjer er givet:
+</p>
+
+<div>
+\begin{align*}
+4x+12y-60 =0 \\
+y = - \frac{1}{3} x -2
+\end{align*}
+
+</div>
+
+<ol>
+<li>Bestem afstanden mellem de to linjer.</li>
+
+</ol>
+</div>
+
+</section>
+<section id="slide-org273b234" data-background="">
+<h3 id="org273b234">Ekstraopgave</h3>
+<div style="font-size: 60%;">
+<p>
+Hvordan vil afstandsformlen mellem en ret linje og et punkt mon se ud, hvis linjen er beskrevet ved
+\[l: y=ax +b\]
+og punktet ved \[P(d,e)?\]
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org23c2842" data-background="">
+<h2 id="org23c2842">Vektorer på polær form</h2>
+<div class="outline-text-2" id="text-org23c2842">
+</div>
+</section>
+<section id="slide-orgeb249fb" data-background="">
+<h3 id="orgeb249fb">Geogebra</h3>
+<p>
+I dag skal vi bruge <code>geogebra</code>, så fyr op under den s&#x2026;n
+</p>
+
+</section>
+<section id="slide-org39e83a2" data-background="">
+<h4 id="org39e83a2">Indskriv følgende vektorer i <code>geogebra</code></h4>
+<div style="font-size: 60%;">
+<div>
+\begin{align*}
+\vec{a} &= \begin{pmatrix} 3 \\ 2 \end{pmatrix} \\
+\vec{b} &= \begin{pmatrix} -4.0 \\ 5 \end{pmatrix} \\
+\vec{c} &= \begin{pmatrix} 1.0 \\ -6.0 \end{pmatrix} \\
+\vec{d} &= \begin{pmatrix} -8 \\ -3 \end{pmatrix} \\
+\end{align*}
+
+</div>
+
+</section>
+<section id="slide-orgde540fd" data-background="">
+<h4 id="orgde540fd">Hvordan var det nu, at man gjorde det?</h4>
+<pre class="example" id="org2dc104b">
+a = (3,2)
+b = (-4.0,5)
+c = (1.0,-6.0)
+d = (-8,-3)
+</pre>
+
+
+<div id="org2b01ce2" class="figure">
+<p><img src="./img/2020-04-17_08-25-56_screenshot.png" alt="2020-04-17_08-25-56_screenshot.png" width="400px" />
+</p>
+</div>
+
+</section>
+<section id="slide-org27f6e65" data-background="">
+<h4 id="org27f6e65">Hvad sker der nu?</h4>
+<p>
+Nogle gange skriver jeg ; (semikolon) for at separere x- og y-koordinater fra hinanden, når jeg skriver punkter op.
+</p>
+
+<p class="fragment (appear)">
+Prøv at skrive de samme vektorer ind i <code>geogebra</code>, bare med ; i stedet for ,.
+</p>
+
+<div class="org-src-container">
+
+<pre class="fragment (appear)">aa = (3;2)
+bb = (-4.0;5)
+cc = (1.0;-6.0)
+dd = (-8;-3)
+</pre>
+</div>
+
+</section>
+<section data-background="">
+
+<div class="org-src-container">
+
+<pre class="src src-fundamental">aa = (3;2)
+bb = (-4.0;5)
+cc = (1.0;-6.0)
+dd = (-8;-3)
+</pre>
+</div>
+
+
+<div id="org17ed144" class="figure">
+<p><img src="./img/2020-04-17_08-34-20_screenshot.png" alt="2020-04-17_08-34-20_screenshot.png" width="400px" />
+</p>
+</div>
+
+</section>
+<section id="slide-org931494b" data-background="">
+<h4 id="org931494b">Hvad skete der lige der?</h4>
+
+
+</section>
+<section id="slide-orge065636" data-background="">
+<h4 id="orge065636">Lad os være lidt mere stringente</h4>
+
+</section>
+<section id="slide-orgde297cd" data-background="">
+<h4 id="orgde297cd">Vi ændrer kun på det første koordinat</h4>
+<div class="org-src-container">
+
+<pre class="src src-fundamental">a1=(1;2)
+a2=(2;2)
+a3=(3;2)
+a4=(4;2)
+</pre>
+</div>
+
+<p class="fragment (appear)">
+Hvad ser I?
+</p>
+
+</section>
+<section data-background="">
+<p>
+Hvad sker der, hvis det første koordinat er negativt?
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-fundamental">b1=(-1;2)
+b2=(-2;2)
+b3=(-3;2)
+b4=(-4;2)
+</pre>
+</div>
+
+</section>
+<section id="slide-orgbfa924a" data-background="">
+<h4 id="orgbfa924a">Ændring af det andet koordinat</h4>
+<div class="org-src-container">
+
+<pre class="src src-fundamental">c1=(2;1)
+c2=(2;2)
+c3=(2;3)
+c4=(2;4)
+c5=(2;5)
+c6=(2;6)
+c7=(2;7)
+c8=(2;8)
+c9=(2;9)
+c10=(2;10)
+</pre>
+</div>
+
+<ul>
+<li class="fragment appear">Hvad sker der?</li>
+<li class="fragment appear">Passer det indtastede med <code>algebravinduet</code>?</li>
+
+</ul>
+
+</section>
+<section id="slide-org7b66166" data-background="">
+<h4 id="org7b66166">Nu med en <code>bolle</code></h4>
+<p>
+Indtast nu
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-fundamental">d1=(2;10&#8304;)
+d2=(2;40&#8304;)
+d3=(2;60&#8304;)
+d4=(2;90&#8304;)
+d5=(2;120&#8304;)
+d6=(2;180&#8304;)
+d7=(2;230&#8304;)
+d8=(2;270&#8304;)
+d9=(2;350&#8304;)
+</pre>
+</div>
+
+</section>
+<section id="slide-orgbcc87f0" data-background="">
+<h4 id="orgbcc87f0">konklusion?</h4>
+<div class="column" style="float:left; width: 50%">
+<p>
+<code>(2;10)</code>
+</p>
+
+<p>
+Angiver vektor med længde og vinkel i <b>radianer</b>
+</p>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+<code>(2;10⁰)</code>
+</p>
+
+<p>
+Angiver vektor med længde og vinkel i <b>grader</b>
+</p>
+</div>
+
+<ul>
+<li class="fragment appear">\(\pi \, rad = 180^{\circ}\)</li>
+<li class="fragment appear">Geogebra siger <code>(3;34⁰)</code> mens jeres matematikbog siger \(\vec{a} = 3 \angle 34^{\circ}\).</li>
+
+</ul>
+
+</section>
+<section id="slide-org2888ee2" data-background="">
+<h3 id="org2888ee2"><i>Polære</i> \(\to\) <b>kartesiske</b></h3>
+<p>
+\[\vec{a} = \lvert \vec{a} \rvert \angle v = \begin{pmatrix} \lvert \vec{a} \rvert \cdot \cos \left( v \right) \\ \lvert \vec{a} \rvert \cdot \sin \left( v \right)\end{pmatrix}\]
+</p>
+
+
+<div id="orgf703631" class="figure">
+<p><img src="./img/2020-04-17_09-32-53_screenshot.png" alt="2020-04-17_09-32-53_screenshot.png" width="400px" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-orgeab71aa" data-background="">
+<h4 id="orgeab71aa">Eksempel</h4>
+<p>
+Omregn \(\vec{a} = 4\angle 120^{\circ}\) til kartesiske koordinater.
+</p>
+
+<ul>
+<li class="fragment appear">\(\vec{a} = \begin{pmatrix} 4 \cdot \cos \left( 120^{\circ} \right) \\ 4 \cdot \sin \left( 120^{\circ} \right) \end{pmatrix}\)</li>
+<li class="fragment appear">\(\vec{a} = \begin{pmatrix} -2.0 \\ 3.46 \end{pmatrix}\)</li>
+
+</ul>
+
+</section>
+<section id="slide-org7e6ec9a" data-background="">
+<h4 id="org7e6ec9a">Opgaver</h4>
+<p>
+Omregn følgende vektorer fra polære til kartesiske koordinater.
+</p>
+<ul>
+<li>\(\vec{a} = 6 \angle 60^{\circ}\)</li>
+<li>\(\vec{b} = 3 \angle 140^{\circ}\)</li>
+<li>\(\vec{c} = 5 \angle -40^{\circ}\)</li>
+
+</ul>
+
+</section>
+<section id="slide-orgbc64a2f" data-background="">
+<h3 id="orgbc64a2f"><i>Kartesiske</i> \(\to\) <b>polære</b></h3>
+<div style="font-size: 60%;">
+<div class="column" style="float:left; width: 50%">
+<p>
+\[\vec{a} =  \begin{pmatrix} a_{x} \\ a_{y}\end{pmatrix}= \lvert \vec{a} \rvert \angle v\]
+</p>
+
+<p>
+Længden:
+\[\lvert \vec{a} \rvert = \sqrt{a_x^2+a_y^2}\]
+</p>
+
+<p>
+Vinklen:
+\[v = \tan^{-1} \left( \frac{a_y}{a_x} \right)\]
+</p>
+
+
+<div id="org9d811e7" class="figure">
+<p><img src="./img/2020-04-17_11-38-09_screenshot.png" alt="2020-04-17_11-38-09_screenshot.png" width="300px" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+<p>
+Eksempel
+</p>
+
+<p>
+\[\vec{a} = \begin{pmatrix} 5 \\2 \end{pmatrix} \quad \vec{b} = \begin{pmatrix} -5 \\-2 \end{pmatrix}\]
+</p>
+
+<ul>
+<li class="fragment appear">\(\lvert \vec{a} \rvert = \sqrt{5^2 + 2^2} = 5.39\)</li>
+<li class="fragment appear">\(\lvert \vec{b} \rvert = \sqrt{(-5)^2 + (-2)^2} = 5.39\)</li>
+<li class="fragment appear">\(v_a = \tan^{-1} \left( \frac{2}{5} \right)=21.80^{\circ}\)</li>
+<li class="fragment appear">\(v_b = \tan^{-1} \left( \frac{-2}{-5} \right)= \tan^{-1} \left( \frac{2}{5} \right)=21.80^{\circ}\)</li>
+<li class="fragment appear">Vinklerne ser ens ud, selvom de ikke er det.</li>
+<li class="fragment appear">Brug tabellen.</li>
+<li class="fragment appear">\(v_b = 21.80^{\circ} + 180^{\circ} = 201.80^{\circ}\).</li>
+
+</ul>
+</div>
+
+</section>
+<section data-background="">
+<p>
+Eksempel fortsat: <code>Geogebra</code>
+</p>
+<div class="column" style="float:left; width: 50%">
+
+<div id="orgbf8f58f" class="figure">
+<p><img src="./img/2020-04-17_11-48-19_screenshot.png" alt="2020-04-17_11-48-19_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
+
+<div id="orgd10ff8f" class="figure">
+<p><img src="./img/2020-04-17_11-49-27_screenshot.png" alt="2020-04-17_11-49-27_screenshot.png" width="600px" />
+</p>
+</div>
+</div>
+
+</section>
+<section id="slide-orge7385f4" data-background="">
+<h4 id="orge7385f4">Opgaver</h4>
+<p>
+Angiv følgende vektorer på <b>polær</b> form.
+</p>
+
+<div>
+\begin{align*}
+\vec{a} &= \begin{pmatrix} 3 \\ 4 \end{pmatrix} \\
+\vec{b} &= \begin{pmatrix} -4 \\ 2 \end{pmatrix} \\
+\vec{c} &= \begin{pmatrix} 1 \\ -5 \end{pmatrix}
+\end{align*}
+
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf3a6f66" data-background="">
+<h2 id="orgf3a6f66">Problemopgaver</h2>
+<div class="outline-text-2" id="text-orgf3a6f66">
+</div>
+</section>
+<section id="slide-org67ebc95" data-background="">
+<h3 id="org67ebc95">Opgave 282</h3>
+
+<div id="org0f81723" class="figure">
+<p><img src="./img/2020-04-26_13-33-37_screenshot.png" alt="2020-04-26_13-33-37_screenshot.png" width="600px" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgff4fc2a" data-background="">
+<h3 id="orgff4fc2a">Opgave 283</h3>
+
+<div id="orgd978a78" class="figure">
+<p><img src="./img/2020-04-26_13-33-56_screenshot.png" alt="2020-04-26_13-33-56_screenshot.png" width="600px" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgb13d175" data-background="">
+<h3 id="orgb13d175">Opgave 284</h3>
+
+<div id="org51bd71a" class="figure">
+<p><img src="./img/2020-04-26_13-34-14_screenshot.png" alt="2020-04-26_13-34-14_screenshot.png" width="600px" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgf8317d6" data-background="">
+<h3 id="orgf8317d6">Opgave 285</h3>
+
+<div id="orga47b1d3" class="figure">
+<p><img src="./img/2020-04-26_13-34-29_screenshot.png" alt="2020-04-26_13-34-29_screenshot.png" width="600px" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: false,
+slideNumber: 'c/t',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'slide',
+transitionSpeed: 'default',
+slideNumber:"c/t",progress:true,transition:"slide",navigationMode:"default",history:false,hash:true,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

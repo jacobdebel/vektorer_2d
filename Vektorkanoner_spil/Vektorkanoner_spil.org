@@ -1,0 +1,68 @@
+#+title: Vektorkanoner
+#+subtitle: Et lille spil med vektorer
+#+author: Matematik
+#+date: Vibenshus Gymnasium
+#+latex_class: article
+#+latex_class_options: [a4paper, 12pt]
+#+language: da
+#+latex_header: \usepackage[danish]{babel}
+#+latex_header: \usepackage{mathtools}
+#+latex_header: \usepackage[margin=2.0cm]{geometry}
+#+latex_header: \hypersetup{colorlinks, linkcolor=black, urlcolor=blue}
+#+latex_header_extra: \setlength{\parindent}{0em}
+#+latex_header_extra: \parskip 1.5ex
+#+options: ^:{} tags:nil toc:nil todo:nil num:nil timestamp:nil
+
+I dette spil skal I beskyde hinanden med jeres vektorkanoner. Spillet er en analog og simplificeret udgave af de klassiske spil [[https://playclassic.games/games/strategy-dos-games-online/play-scorched-earth-online/][Scorched Earth]], [[https://playclassic.games/games/turn-based-strategy-dos-games-online/play-worms-online/][Worms]], og nyere spil a la [[http://www.shellshocklive.com/][ShellShock live]].
+
+
+#+begin_center
+#+attr_latex: :center nil :height 3.5cm 
+[[file:img/2022-10-26_13-46-35_screenshot.png]]
+[[file:img/2022-10-26_13-54-06_screenshot.png]]
+[[file:img/mindre.png]]
+#+end_center
+
+Scorched Earth 1991, Worms 1995 og ShellShock live 2015.
+
+I den simple version skal I forestille jer, at I har 3 kanoner hver, og det gælder om at ramme modstanderens kanoner.
+
+* Regler
+Reglerne er simple:
+
+1. På et tegnet papir indtegner I et stort koordinatsystem med en eller begge akser langs papirets sider.
+2. Hver spiller indtegner sine kanoner i hver ende af x-aksen. Kanonerne kan ikke stå oven i hinanden.
+3. Træk lod om, hvem der skal starte.
+4. Et skud foregår på følgende måde:
+   1. Kanonenskuglens starthastighedsvektor noteres. Denne kan ikke ændres, når et skud er i gang, og man kan ikke skyde vandret.
+   2. Udregn kanonkuglens nye hastighedsvektorer ved at holde x-koordinatet konstant og hele tiden trække 1 fra y-koordinatet.
+   3. Kanonkuglens bane tegnes ved at indtegne vektorerne i forlængelse af hinanden. Banen skulle gerne komme til at se ud som en parabel.
+   4. Hvis banen ender med at ramme en af modstanderens kanoner, har man fået en træffer, og modstanderens kanon er sat ud af spillet. Ellers har man ramt forbi, og må prøve igen i næste tur.
+5. Nu er det den anden spillers tur. Husk at skyde i den rigtige retning.
+6. Man skiftes til at skyde, indtil den ene spiller har ramt alle modstanderens kanoner.
+
+   
+* Regneeksempel
+Spilleren til venstre noterer starthastighedsvektoren $\begin{pmatrix} 5 \\ 2 \end{pmatrix}$ på sit papir. De efterfølgende par vektorer vil så være $\begin{pmatrix} 5 \\ 1 \end{pmatrix}$, $\begin{pmatrix} 5 \\ 0 \end{pmatrix}$, $\begin{pmatrix} 5 \\ -1 \end{pmatrix}$ og $\begin{pmatrix} 5 \\ -2 \end{pmatrix}$.
+
+På figuren kan eksemplet ses grafisk.
+
+[[./img/Regneeksempel.png]]
+
+#+begin_export latex
+\newpage
+#+end_export
+* Ekstra udfordringer
+Hvis det oprindelige spil bliver for nemt er her en række eksempler på tilføjelse, man kan anvende.
+
+1. Man kan tegne et bakket landskab, og placere kanonerne på bakkerne og i dalene.
+2. Man kan indsætte et højt bjerg eller lignende i midten af banen, som man skal skyde over.
+3. Man kan spille med mod- og medvind.
+   x-koordinatet kan f.eks. vokse med 1 for hver vektor, når man har medvind, og falde med 1 for hver vektor i modvind.
+4. Man kan spille på andre planeter, hvor tyngdekraften er større eller mindre (Der skal mere eller mindre end 1 fra på y-aksen hver gang).
+5. Man kan begrænse kanonernes skudkraft ved at sætte en grænse for, hvor lang starthastighedsvektoren må være.
+6. Man kan indsætte infanterienheder, som rykker 1 felt frem for hver tur. Hvis infanteriet når frem til en spillers kanon er den sat ud af spillet. Man skal derfor også få skudt infanteriet ned.
+
+Det er altså kun fantasien, som sætter grænser.
+
+God spillelyst.

@@ -1,0 +1,641 @@
+#+title: Vektorer i 2D - resten
+#+subtitle: Matematik
+#+author: Vibenshus Gymnasium
+#+date: 
+# Themes: beige|black|blood|league|moon|night|serif|simple|sky|solarized|white
+#+reveal_theme: sky
+#+reveal_title_slide: <h2>%t</h2><h3>%s</h3><h4>%a</h4><h4>%d</h4>
+#+reveal_title_slide_background:
+#+reveal_default_slide_background:
+#+reveal_extra_options: slideNumber:"c/t",progress:true,transition:"slide",navigationMode:"default",history:false,hash:true
+#+options: toc:nil num:nil tags:nil timestamp:nil ^:{}
+
+
+* Skalarprodukt 
+
+** Skalarprodukt
+
+Vi kender allerede 
+
+#+begin_quote
+$$\vec{a}\cdot \vec{b} = a_x\cdot b_x+a_y\cdot b_y$$
+#+end_quote
+
+#+attr_reveal: :frag (appear)
+Nu skal vi se på
+
+#+attr_reveal: :frag (appear)
+#+begin_quote
+$$\vec{a}\cdot \vec{b} = \lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert \cdot \cos \left( v \right)$$
+#+end_quote
+
+#+reveal: split
+
+
+Udledning
+#+DOWNLOADED: screenshot @ 2020-04-25 11:39:43
+#+attr_html: :width 600px
+[[./skalarprodukt_med_vinkel.pdf][file:./img/2020-04-25_11-39-43_screenshot.png]]
+
+** Vinkel mellem to vektorer
+#+reveal_html: <div style="font-size: 60%;">
+Kombinér de to udtryk for skalarproduktet og isoler vinklen.
+
+\begin{align*}
+\vec{a} \cdot \vec{b} &= a_x\cdot b_x+a_y\cdot b_y  \\
+\vec{a} \cdot \vec{b} &= \lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert \cdot \cos \left( v \right) \\
+\lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert \cdot \cos \left( v \right) &=a_x\cdot b_x+a_y\cdot b_y \\
+\end{align*}
+
+#+begin_quote
+$$v = \cos^{-1} \left( \frac{a_x\cdot b_x+a_y\cdot b_y}{\lvert \vec{a} \rvert \cdot \lvert \vec{b} \rvert} \right)$$
+#+end_quote
+#+reveal: split
+#+begin_quote
+Hvis skalarproduktet mellem to vektorer er nul, er de to vektorer vinkelrette på hinanden.
+$$\text{Hvis} \quad \vec{a} \cdot \vec{b} = 0 \quad \text{så er}\quad \vec{a} \perp \vec{b}$$
+#+end_quote
+*** Opgave
+
+
+#+DOWNLOADED: screenshot @ 2020-04-25 12:36:48
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./img/2020-04-25_12-36-48_screenshot.png]]
+
+
+* Determinant
+
+** Determinant
+#+reveal_html: <div style="font-size: 60%;">
+Determinanten mellem to vektorer udregnes således:
+
+#+begin_quote
+$$\det \left( \vec{a}, \vec{b} \right) = \begin{vmatrix} a_x & b_x \\ a_y & b_y \end{vmatrix} = a_x \cdot b_y - b_x \cdot a_y$$
+#+end_quote
+
+#+attr_reveal: :frag (appear)
+Hvad kan determinanten så bruges til?
+
+#+attr_reveal: :frag (appear)
+#+begin_quote
+Hvis determinanten mellem to vektorer er nul, er de to vektorer parallelle.
+$$\text{Hvis} \quad \det \left(\vec{a},\vec{b}\right) = 0 \quad \text{så er} \quad \vec{a} \parallel \vec{b}$$
+#+end_quote
+
+#+reveal: split
+Udledning
+
+#+reveal_html: <div style="font-size: 60%;">
+- Det vides at en vektor og dennes tværvektor er vinkelrette på hinanden 
+
+$$\vec{a} \cdot \hat{a} = 0$$
+
+- Dvs. at hvis $\vec{a} \cdot \hat{b} = 0$ så er $\vec{a} \parallel \vec{b}$
+  
+
+#+DOWNLOADED: screenshot @ 2020-04-25 13:22:52
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./udledning_determinant.pdf][file:./img/2020-04-25_13-22-52_screenshot.png]]
+
+
+*** Opgaver
+#+reveal_html: <div style="font-size: 60%;">
+1. Hvad er determinanten af $\vec{a} = \begin{pmatrix} 8 \\ 12 \end{pmatrix}$ og $\vec{b} = \begin{pmatrix} -5 \\ 6 \end{pmatrix}$?
+   
+2.  Hvad skal $t$ være, for at vektorerne $\vec{c} =\begin{pmatrix} 2 \\-3 \end{pmatrix}$ og $\vec{d} = \begin{pmatrix} 5-t\\ 6\end{pmatrix}$ er parallelle?
+
+** Hvad kan determinanten ellers bruges til?
+#+reveal_html: <div style="font-size: 60%;">
+#+attr_reveal: :frag (appear)
+Bestemmelse af arealer af parallelogrammer og trekanter.
+#+attr_reveal: :frag (appear)
+#+attr_html: :width 300px
+[[./img/2020-04-25_14-28-46_csm_fig-17-kap-5--mat-B1-revision_d988b08468.png]]
+
+#+reveal: split
+#+reveal_html: <div style="font-size: 60%;">
+#+attr_html: :width 200px
+[[./img/2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png]]
+
+#+attr_reveal: :frag (appear)
+\begin{align*}
+A_\text{firkant} &= x_1\cdot y_2 \\
+A_1 &= \frac{1}{2}x_1 \cdot y_1 \\
+A_2 &= \frac{1}{2}x_2 \cdot y_2 \\
+A_3 &= \frac{1}{2}\left(x_1 - x_2\right) \cdot \left(y_2-y_1\right) 
+\end{align*}
+
+#+reveal: split
+#+reveal_html: <div style="font-size: 50%;">
+#+attr_html: :width 200px
+[[./img/2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png]]
+
+#+attr_reveal: :frag (appear)
+Trekantens areal
+#+attr_reveal: :frag (appear)
+\begin{align*}
+A &= A_\text{firkant} - A_1 - A_2 - A_3 \\
+A &= x_1\cdot y_2 - \left( \frac{1}{2}x_1 \cdot y_1 \right)  - \left( \frac{1}{2}x_2 \cdot y_2 \right) - \left( \frac{1}{2}\left(x_1 - x_2\right) \cdot \left(y_2-y_1\right) \right) \\
+A &= x_1\cdot y_2 -  \frac{1}{2}x_1 \cdot y_1   -  \frac{1}{2}x_2 \cdot y_2  -  \frac{1}{2} x_1 y_2 +\frac{1}{2}x_1 y_1 + \frac{1}{2}x_2 y_2 - \frac{1}{2}x_2 y_1 \\
+A &= x_1\cdot y_2 -  \frac{1}{2} x_1 y_2 - \frac{1}{2}x_2 y_1 \\
+A &= \frac{1}{2}\left(x_1\cdot y_2 - x_2 y_1\right) = \frac{1}{2}\det \left( \vec{b}, \vec{a} \right)
+\end{align*}
+
+#+reveal: split
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+En trekants areal
+#+attr_html: :width 300px
+[[./img/2020-04-25_14-33-23_csm_fig-18-kap-5--mat-B1-revision_1e77c6586e.png]]
+\begin{align*}
+A_\text{trekant} &= \frac{1}{2}\lvert x_1\cdot y_2 - x_2 y_1 \rvert \\
+A_\text{trekant} &= \frac{1}{2}\left| \det \left( \vec{a}, \vec{b} \right)\right|
+\end{align*}
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+Et parallelograms areal
+
+#+attr_html: :width 300px
+[[./img/2020-04-25_14-28-46_csm_fig-17-kap-5--mat-B1-revision_d988b08468.png]]
+
+\begin{align*}
+A_\text{parallelogram} &= \lvert x_1\cdot y_2 - x_2 y_1 \rvert \\
+A_\text{parallelogram} &= \left| \det \left( \vec{a}, \vec{b} \right)\right|
+\end{align*}
+
+#+begin_quote
+Læg mærke til de numeriske værdier.
+#+end_quote
+#+reveal_html: </div>
+
+*** Opgaver                                               :opg_277_tek_mat:
+#+reveal_html: <div style="font-size: 60%;">
+Bestem arealerne til de tre trekanter, hvis hjørner er givet ved følgende:
+
+1. (0,0), (4,6) og (7,5)
+2. (-2,-3), (-5,6) og (-1,-7)
+3. (3,-1), (2,3) og (-2,1)
+   
+#+attr_reveal: :frag (appear)
+#+begin_quote
+Hints: Opstil to vektorer, som har begyndelsespunkt i det samme punkt. Benyt herefter determinantmetoden til at bestemme trekantens areal.
+#+end_quote
+
+* Projektion
+
+** Projektion 
+
+#+reveal_html: <div style="font-size: 60%;">
+#+begin_quote
+Lys med en lygte på både $\vec{a}$ og $\vec{b}$ så lyset falder vinkelret ind på $\vec{b}$. /Projektionen/ af $\vec{a}$ på $\vec{b}$ er da /skyggen/ af $\vec{a}$ på $\vec{b}$.
+#+end_quote
+
+#+DOWNLOADED: https://app.abacus.dk/bundles/abacuscore/textbook_images/projektionsol_new.png @ 2020-04-25 20:09:21
+#+attr_html: :width 400px
+[[./img/2020-04-25_20-09-21_projektionsol_new.png]]
+
+
+#+reveal: split
+#+reveal_html: <div style="font-size: 50%;">
+
+#+DOWNLOADED: https://app.abacus.dk/bundles/abacuscore/textbook_images/projektionbevis_new.png @ 2020-04-25 20:07:57
+#+attr_html: :width 300px
+[[./img/2020-04-25_20-07-57_projektionbevis_new.png]]
+
+Koordinaterne til projektionsvektoren
+#+begin_quote
+\begin{align*}
+\vec{a}_b &= \frac{\vec{a} \cdot \vec{b}}{\lvert \vec{b}\rvert} \cdot \vec{e}_b \\
+\vec{a}_b &= \frac{\vec{a} \cdot \vec{b}}{\lvert \vec{b}\rvert^2} \cdot \vec{b} \\
+\vec{a}_b &= \frac{\vec{a} \cdot \vec{b}}{\vec{b} \cdot \vec{b}} \cdot \vec{b}
+\end{align*}
+#+end_quote
+
+** Bevis
+#+reveal_html: <div style="font-size: 60%;">
+- I makkerpar skal I læse beviset på [[https://matbhtx.systime.dk/?id=c15278]]. Skift til at læse højt for hinanden. 
+- Fortsæt først når alle har forstået sætningen. 
+- Hvordan kan det f.eks. være at $\vec{b} \cdot \vec{b} = \lvert \vec{b} \rvert^2$?
+
+#+DOWNLOADED: screenshot @ 2020-04-25 20:24:40
+#+attr_html: :width 300px
+#+attr_latex: :width 7cm
+[[./img/2020-04-25_20-24-40_screenshot.png]]
+
+** Længden af projektionsvektoren
+#+begin_quote
+Er den numeriske værdi af det, der står foran enhedsvektoren.
+#+end_quote
+
+\begin{align*}
+\lvert \vec{a}_b \rvert = \frac{\lvert \vec{a} \cdot \vec{b} \rvert}{\lvert \vec{b} \rvert}
+\end{align*}
+
+** Eksempel
+
+#+DOWNLOADED: screenshot @ 2020-04-25 20:45:07
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./img/2020-04-25_20-45-07_screenshot.png]]
+
+
+** Opgave
+#+reveal_html: <div style="font-size: 60%;">
+For vektorerne $\vec{a}=\begin{pmatrix} 5 \\ 2 \end{pmatrix}$ og $\vec{b} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ (De samme vektorer som i eksemplet) skal I
+
+1. Bestemme koordinaterne til $\vec{b}_a$.
+2. Bestemme længden af projektionsvektoren $\lvert \vec{b}_a \rvert$.
+   
+* Ligevægt / Statiske konstruktioner 
+** Ligevægt
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+Hvis summen af alle vektorer danner en lukket polygon, er der tale om ligevægt.
+$$\vec{a} + \vec{b} + \vec{c} +\vec{d} = \begin{pmatrix} 0\\0\end{pmatrix}$$
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+#+DOWNLOADED: screenshot @ 2020-04-26 13:21:39
+#+attr_html: :width 300px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-21-39_screenshot.png]]
+#+reveal_html: </div>
+
+** Statiske konstruktioner
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+Summen af alle (kraft)vektorer i et knudepunkt er lig nul.
+$$\vec{F} + \vec{s}_1 + \vec{s}_2 + \vec{s}_3 = \vec{0}$$
+
+#+DOWNLOADED: https://matbhtx.systime.dk/fileadmin/_processed_/8/d/csm_Eiffeltaarnet_i_Paris_3eeb3e50ef.jpg @ 2020-04-26 13:26:23
+#+attr_html: :width 150px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-26-23_csm_Eiffeltaarnet_i_Paris_3eeb3e50ef.jpg]]
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+
+#+DOWNLOADED: https://matbhtx.systime.dk/fileadmin/_processed_/3/e/csm_figur-19_bb871a66f9.png @ 2020-04-26 13:26:33
+#+attr_html: :width 210px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-26-33_csm_figur-19_bb871a66f9.png]]
+
+
+#+DOWNLOADED: https://matbhtx.systime.dk/fileadmin/_processed_/9/2/csm_fig22_s345_bbb63fb24c.png @ 2020-04-26 13:26:54
+#+attr_html: :width 210px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-26-54_csm_fig22_s345_bbb63fb24c.png]]
+
+#+reveal_html: </div>
+
+** Opgaver
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+#+begin_quote
+Givet er vektorerne 
+$$\vec{a} = \begin{pmatrix} 4 \\ 3\end{pmatrix}$$
+og
+$$\vec{b} = \begin{pmatrix} 6 \\ 1\end{pmatrix}$$
+
+1. Bestem koordinaterne til en vektor $\vec{c}$, der kan holde ligevægt med summen af $\vec{a}$ og $\vec{b}$.
+#+end_quote
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+
+#+DOWNLOADED: screenshot @ 2020-04-26 13:12:00
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-12-00_screenshot.png]]
+(Det er højden af gitterkonstruktionen, som er 3.00 meter.)
+#+reveal_html: </div>
+
+* Normalvektor til ret linje
+** Normalvektor til ret linje
+#+reveal_html: <div style="font-size: 60%;">
+Hvis en ret linje skrives som
+$$a \cdot x + b \cdot y +c =0$$
+så kan den skrives som
+$$y = - \frac{a}{b}\cdot x - \frac{c}{b}$$
+
+#+reveal: split
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+For linjen
+$$a \cdot x + b \cdot y +c =0$$
+Er /retningsvektoren/   
+$$\vec{v} = \begin{pmatrix} b \\ - a \end{pmatrix}$$
+
+og normalvektoren er da
+$$\vec{n}= \hat{v} = \begin{pmatrix} a \\ b \end{pmatrix}$$
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+#+DOWNLOADED: screenshot @ 2020-04-26 11:44:35
+#+attr_html: :width 300px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_11-44-35_screenshot.png]]
+#+reveal_html: </div>
+
+#+reveal: split
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+For linjen
+$$y = a \cdot x + b$$
+Er /retningsvektoren/   
+$$\vec{v} = \begin{pmatrix} 1 \\ a \end{pmatrix}$$
+
+og normalvektoren er da
+$$\vec{n}= \hat{v} = \begin{pmatrix} - a \\ 1 \end{pmatrix}$$
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+#+DOWNLOADED: screenshot @ 2020-04-26 12:25:20
+#+attr_html: :width 300px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_12-25-20_screenshot.png]]
+#+reveal_html: </div>
+
+* Afstand fra linje til punkt
+** Afstand fra linje til punkt
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+Hvis en ret linje er beskrevet med ligningen
+$$l: ax+by+c = 0$$
+og et punkt er beskrevet som
+$$P(d,e)$$
+da kan den /vinkelrette/ afstand mellem linjen og punktet bestemmes vha.
+
+$$\boxed{dist(l,P)= z = \frac{\lvert a \cdot d + b \cdot e + c\rvert}{\sqrt{a^2+b^2}}}$$
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+#+DOWNLOADED: screenshot @ 2020-04-26 13:01:51
+#+attr_html: :width 300px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-01-51_screenshot.png]]
+#+reveal_html: </div>
+
+** Opgaver
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+En ret linje er givet ved: 
+$$12x+3y+9 =0$$
+
+1. Bestem linjens normalvektor.
+2. Bestem afstanden fra linjen til punktet $(-2,4)$.
+3. Bestem afstanden fra linjen til punktet $(0,0)$.
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+To parallelle linjer er givet:
+
+\begin{align*}
+4x+12y-60 =0 \\
+y = - \frac{1}{3} x -2
+\end{align*}
+
+1. Bestem afstanden mellem de to linjer.
+#+reveal_html: </div>
+
+** Ekstraopgave
+#+reveal_html: <div style="font-size: 60%;">
+Hvordan vil afstandsformlen mellem en ret linje og et punkt mon se ud, hvis linjen er beskrevet ved
+$$l: y=ax +b$$
+og punktet ved $$P(d,e)?$$
+
+
+* Vektorer på polær form
+** Geogebra
+I dag skal vi bruge =geogebra=, så fyr op under den s...n
+
+*** Indskriv følgende vektorer i =geogebra=
+#+reveal_html: <div style="font-size: 60%;">
+\begin{align*}
+\vec{a} &= \begin{pmatrix} 3 \\ 2 \end{pmatrix} \\
+\vec{b} &= \begin{pmatrix} -4.0 \\ 5 \end{pmatrix} \\
+\vec{c} &= \begin{pmatrix} 1.0 \\ -6.0 \end{pmatrix} \\
+\vec{d} &= \begin{pmatrix} -8 \\ -3 \end{pmatrix} \\
+\end{align*}
+
+*** Hvordan var det nu, at man gjorde det?
+
+#+begin_example
+  a = (3,2)
+  b = (-4.0,5)
+  c = (1.0,-6.0)
+  d = (-8,-3)
+#+end_example
+
+#+attr_html: :width 400px
+[[./img/2020-04-17_08-25-56_screenshot.png]]
+
+*** Hvad sker der nu?
+
+Nogle gange skriver jeg ; (semikolon) for at separere x- og y-koordinater fra hinanden, når jeg skriver punkter op.
+
+#+attr_reveal: :frag (appear)
+Prøv at skrive de samme vektorer ind i =geogebra=, bare med ; i stedet for ,.
+
+#+attr_reveal: :frag (appear)
+#+begin_src fundamental
+  aa = (3;2)
+  bb = (-4.0;5)
+  cc = (1.0;-6.0)
+  dd = (-8;-3)
+#+end_src
+
+#+reveal: split
+
+#+begin_src fundamental
+  aa = (3;2)
+  bb = (-4.0;5)
+  cc = (1.0;-6.0)
+  dd = (-8;-3)
+#+end_src
+
+#+attr_html: :width 400px
+[[./img/2020-04-17_08-34-20_screenshot.png]]
+
+*** Hvad skete der lige der?
+
+
+*** Lad os være lidt mere stringente
+
+*** Vi ændrer kun på det første koordinat
+
+#+begin_src fundamental
+a1=(1;2)
+a2=(2;2)
+a3=(3;2)
+a4=(4;2)
+#+end_src
+
+#+attr_reveal: :frag (appear)
+Hvad ser I?
+
+#+reveal: split
+Hvad sker der, hvis det første koordinat er negativt?
+
+#+begin_src fundamental
+b1=(-1;2)
+b2=(-2;2)
+b3=(-3;2)
+b4=(-4;2)
+#+end_src
+
+*** Ændring af det andet koordinat
+
+#+begin_src fundamental
+c1=(2;1)
+c2=(2;2)
+c3=(2;3)
+c4=(2;4)
+c5=(2;5)
+c6=(2;6)
+c7=(2;7)
+c8=(2;8)
+c9=(2;9)
+c10=(2;10)
+#+end_src
+
+#+attr_reveal: :frag (appear)
+- Hvad sker der?
+- Passer det indtastede med =algebravinduet=?
+  
+*** Nu med en =bolle=
+Indtast nu
+
+#+begin_src fundamental
+d1=(2;10⁰)
+d2=(2;40⁰)
+d3=(2;60⁰)
+d4=(2;90⁰)
+d5=(2;120⁰)
+d6=(2;180⁰)
+d7=(2;230⁰)
+d8=(2;270⁰)
+d9=(2;350⁰)
+#+end_src
+
+*** konklusion?
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+=(2;10)=
+
+Angiver vektor med længde og vinkel i *radianer*
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+=(2;10⁰)=
+
+Angiver vektor med længde og vinkel i *grader*
+#+reveal_html: </div>
+
+#+attr_reveal: :frag (appear)
+- $\pi \, rad = 180^{\circ}$
+- Geogebra siger =(3;34⁰)= mens jeres matematikbog siger $\vec{a} = 3 \angle 34^{\circ}$.
+  
+**  /Polære/ $\to$ *kartesiske* 
+$$\vec{a} = \lvert \vec{a} \rvert \angle v = \begin{pmatrix} \lvert \vec{a} \rvert \cdot \cos \left( v \right) \\ \lvert \vec{a} \rvert \cdot \sin \left( v \right)\end{pmatrix}$$
+
+#+attr_html: :width 400px
+[[./img/2020-04-17_09-32-53_screenshot.png]]
+
+
+*** Eksempel
+Omregn $\vec{a} = 4\angle 120^{\circ}$ til kartesiske koordinater.
+
+#+attr_reveal: :frag (appear)
+- $\vec{a} = \begin{pmatrix} 4 \cdot \cos \left( 120^{\circ} \right) \\ 4 \cdot \sin \left( 120^{\circ} \right) \end{pmatrix}$
+- $\vec{a} = \begin{pmatrix} -2.0 \\ 3.46 \end{pmatrix}$
+  
+*** Opgaver
+Omregn følgende vektorer fra polære til kartesiske koordinater.
+- $\vec{a} = 6 \angle 60^{\circ}$
+- $\vec{b} = 3 \angle 140^{\circ}$
+- $\vec{c} = 5 \angle -40^{\circ}$
+
+** /Kartesiske/ $\to$ *polære* 
+#+reveal_html: <div style="font-size: 60%;">
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+$$\vec{a} =  \begin{pmatrix} a_{x} \\ a_{y}\end{pmatrix}= \lvert \vec{a} \rvert \angle v$$
+
+Længden:
+$$\lvert \vec{a} \rvert = \sqrt{a_x^2+a_y^2}$$
+
+Vinklen:
+$$v = \tan^{-1} \left( \frac{a_y}{a_x} \right)$$
+
+#+attr_html: :width 300px
+[[./img/2020-04-17_11-38-09_screenshot.png]]
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+Eksempel
+
+$$\vec{a} = \begin{pmatrix} 5 \\2 \end{pmatrix} \quad \vec{b} = \begin{pmatrix} -5 \\-2 \end{pmatrix}$$
+
+#+attr_reveal: :frag (appear)
+- $\lvert \vec{a} \rvert = \sqrt{5^2 + 2^2} = 5.39$
+- $\lvert \vec{b} \rvert = \sqrt{(-5)^2 + (-2)^2} = 5.39$
+- $v_a = \tan^{-1} \left( \frac{2}{5} \right)=21.80^{\circ}$
+- $v_b = \tan^{-1} \left( \frac{-2}{-5} \right)= \tan^{-1} \left( \frac{2}{5} \right)=21.80^{\circ}$
+- Vinklerne ser ens ud, selvom de ikke er det.
+- Brug tabellen.
+- $v_b = 21.80^{\circ} + 180^{\circ} = 201.80^{\circ}$.
+#+reveal_html: </div>
+
+#+reveal: split
+Eksempel fortsat: =Geogebra=
+#+reveal_html: <div class="column" style="float:left; width: 50%">
+#+attr_html: :width 600px
+[[./img/2020-04-17_11-48-19_screenshot.png]]
+#+reveal_html: </div>
+
+#+reveal_html: <div class="column" style="float:right; width: 50%">
+#+attr_html: :width 600px
+[[./img/2020-04-17_11-49-27_screenshot.png]]
+#+reveal_html: </div>
+
+*** Opgaver
+Angiv følgende vektorer på *polær* form.
+
+\begin{align*}
+\vec{a} &= \begin{pmatrix} 3 \\ 4 \end{pmatrix} \\
+\vec{b} &= \begin{pmatrix} -4 \\ 2 \end{pmatrix} \\
+\vec{c} &= \begin{pmatrix} 1 \\ -5 \end{pmatrix}
+\end{align*}
+
+
+* Problemopgaver
+
+** Opgave 282
+
+#+DOWNLOADED: screenshot @ 2020-04-26 13:33:37
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-33-37_screenshot.png]]
+
+** Opgave 283
+
+#+DOWNLOADED: screenshot @ 2020-04-26 13:33:56
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-33-56_screenshot.png]]
+
+** Opgave 284
+
+#+DOWNLOADED: screenshot @ 2020-04-26 13:34:14
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-34-14_screenshot.png]]
+
+** Opgave 285
+
+#+DOWNLOADED: screenshot @ 2020-04-26 13:34:29
+#+attr_html: :width 600px
+#+attr_latex: :width 7cm
+[[./img/2020-04-26_13-34-29_screenshot.png]]
